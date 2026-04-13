@@ -1,0 +1,33 @@
+# CLI Plugin Configuration
+# Controls which command groups and individual commands are enabled
+
+# Command groups to enable
+# Use "all" to enable everything, or list specific groups
+enabled_groups:
+  - all  # Enable all command groups
+
+# Alternative: Enable only specific groups
+# enabled_groups:
+#   - pipeline
+#   - history
+#   - staging
+#   - plotting
+
+# Disable specific commands (even if their group is enabled)
+disabled_commands: []
+  # Examples:
+  # - plot-its-sequential  # Disable experimental command
+  # - staging-stats        # Disable stats command
+
+# Plugin settings
+settings:
+  # Allow third-party plugins
+  allow_third_party: false
+
+  # Third-party plugin directories (not yet implemented)
+  third_party_dirs: []
+    # - ~/.optothermal/plugins
+    # - /usr/local/share/optothermal/plugins
+
+  # Command name prefix for third-party plugins
+  third_party_prefix: "ext-"

@@ -1,0 +1,75 @@
+# Global mapping: CSV parameter name -> manifest column name
+# Aliases handle naming variations across procedures
+ManifestColumnMap:
+  # Voltage parameters (IV sweep)
+  vsd_start_v: [VSD start, Vsd start]
+  vsd_end_v: [VSD end, Vsd end]
+  vsd_step_v: [VSD step, Vsd step]
+
+  # Instrument settings
+  nplc: [NPLC]
+  n_avg: [N_avg]
+  irange: [Irange]
+  burn_in_time_s: [Burn-in time]
+  step_time_s: [Step time]
+
+  # Laser calibration parameters
+  wavelength_nm: [Laser wavelength, Wavelength]
+  laser_voltage_start_v: [Laser voltage start]
+  laser_voltage_end_v: [Laser voltage end]
+  laser_voltage_step_v: [Laser voltage step]
+  optical_fiber: [Optical fiber]
+  sensor_model: [Sensor model]
+
+  # Metadata fields
+  sample: [Sample]
+  information: [Information]
+
+procedures:
+  IV:
+    Parameters:
+      Irange: float
+      NPLC: int
+      N_avg: int
+      Burn-in time: float
+      Chained execution: bool
+      Information: str
+      Sample: str
+      Show more: bool
+      Step time: float
+      VSD end: float
+      VSD start: float
+      VSD step: float
+    Metadata:
+      Start time: datetime
+    Data:
+      Vsd (V): float
+      I (A): float
+      t (s):
+        type: float
+        required: false
+
+    Config:
+      light_detection: none
+
+  LaserCalibration:
+    Parameters:
+      N_avg: int
+      Optical fiber: str
+      Chained execution: bool
+      Laser wavelength: float
+      Procedure version: str
+      Step time: float
+      Laser voltage end: float
+      Laser voltage start: float
+      Laser voltage step: float
+    Metadata:
+      Start time: datetime
+      Sensor model: str
+    Data:
+      VL (V): float
+      Power (W): float
+
+    Config:
+      light_detection: laser_calibration
+      requires_chip: false
