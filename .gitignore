@@ -14,5 +14,7 @@ data/01_raw/
 data/02_stage/
 data/03_derived/
 figs/
+figures/
 *.parquet
+*.png
 .optothermal_cli_config.json

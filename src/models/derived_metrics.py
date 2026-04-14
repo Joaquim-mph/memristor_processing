@@ -301,6 +301,14 @@ def metric_display_name(metric_name: str) -> str:
         "poly_corrected_max_neg_v": "Voltage at Max Negative Current (Poly-Corrected)",
         "poly_corrected_max_pos_i": "Max Positive Current (Poly-Corrected)",
         "poly_corrected_max_pos_v": "Voltage at Max Positive Current (Poly-Corrected)",
+        "hysteresis_total_area": "Hysteresis Loop Area (Total)",
+        "hysteresis_positive_area": "Hysteresis Loop Area (V > 0)",
+        "hysteresis_negative_area": "Hysteresis Loop Area (V < 0)",
+        "on_off_ratio": "On/Off Current Ratio",
+        "v_peak_pos": "Peak Hysteresis Voltage (V > 0)",
+        "v_onset_pos": "Hysteresis Onset Voltage (V > 0)",
+        "v_peak_neg": "Peak Hysteresis Voltage (V < 0)",
+        "v_onset_neg": "Hysteresis Onset Voltage (V < 0)",
     }
     return names.get(metric_name, metric_name.replace("_", " ").title())
 
