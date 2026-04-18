@@ -1,0 +1,5 @@
+[core]
+    remote = origin
+['remote "origin"']
+    url = ssh://calisto@calisto-berry.local/srv/dvc-store/memristor
+    keyfile = /home/mphstphls/.ssh/id_ed25519

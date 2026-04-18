@@ -18,3 +18,4 @@ figures/
 *.parquet
 *.png
 .optothermal_cli_config.json
+/data
